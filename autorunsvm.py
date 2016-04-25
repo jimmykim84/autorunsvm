@@ -7,7 +7,7 @@ __author__ = 'Jimmykim'
 
 import glob, os, time, sys  
 
-#os.chdir('/Users/jimmykim/Documents/libsvm-3.21/tools/test/')
+os.chdir('/Users/jimmykim/Documents/libsvm-3.21/tools/test/')
 
 import subprocess
 import platform
@@ -37,15 +37,15 @@ if __name__ == '__main__':
         txtFileName = name[0:-4]
         showname =os.path.basename(txtFileName)
         for j in range(1,m,1):
-            trainName = '%s_train_%d_.txt'%(txtFileName,j)
-            testName = '%s_test_%d_.txt'%(txtFileName,j)
-            resultName = '%s_result_%d_.txt'%(txtFileName,j)
+            trainName = '%s_train_%d.txt'%(txtFileName,j)
+            testName = '%s_test_%d.txt'%(txtFileName,j)
+            #resultName = '%s_result_%d.txt'%(txtFileName,j)
             subprocess.call("python %s %s %d %s %s"%(subsetpath,name,ts,trainName,testName),shell=True)
         for j in range(1,m,1):
             print '第 %2d 次对 %s 数据进行分类'%(j,showname)
-            trainName = '%s_train_%d_.txt'%(txtFileName,j)
-            testName = '%s_test_%d_.txt'%(txtFileName,j)
-            resultName = '%s_result_%d_.txt'%(txtFileName,j)   # output 
+            trainName = '%s_train_%d.txt'%(txtFileName,j)
+            testName = '%s_test_%d.txt'%(txtFileName,j)
+            resultName = '%s_result_%d.txt'%(txtFileName,j)   # output 
             #print "python %s %s %s >> %s"%(easypath,trainName,testName,resultName)
             subprocess.call("python %s %s %s >> %s"%(easypath,trainName,testName,resultName),shell=True)
     end = time.time()
