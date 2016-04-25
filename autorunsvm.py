@@ -13,14 +13,14 @@ sysstr = platform.system()
 
 if(sysstr=="Windows"):
     # Windows
-    filesRead = r"C:\libsvm\tools\test\*.txt"     # your libsvm data path
-    subsetpath = "C:\libsvm\tools\test\subset.py" 
-    easypath = "/C:\libsvm\tools\test\easy.py"
+    filesRead = r"C:\libsvm\tools\test\*.txt"  # your libsvm data path
+    subsetpath = r"C:\libsvm\tools\test\subset.py"
+    easypath = r"C:\libsvm\tools\test\easy.py"
 else:
     # Mac
     filesRead = r"/Users/jimmykim/Documents/libsvm-3.21/tools/test/*.txt"
-    subsetpath = "/Users/jimmykim/Documents/libsvm-3.21/tools/test/subset.py"
-    easypath = "/Users/jimmykim/Documents/libsvm-3.21/tools/test/easy.py"
+    subsetpath = r"/Users/jimmykim/Documents/libsvm-3.21/tools/test/subset.py"
+    easypath = r"/Users/jimmykim/Documents/libsvm-3.21/tools/test/easy.py"
     
 m = 11 # 10 times validations
 ts = 600 # train samples
